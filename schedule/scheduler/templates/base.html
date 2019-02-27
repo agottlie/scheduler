@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scheduler</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-inverse">
+        <div class="container">
+          <div class="navbar-header" style="float:none">
+            <div class="navbar-brand" style="text-align:center;float:none"><a href="/" style="color:lightgray">Julia's Scheduler</a></div>
+          </div>
+        </div>
+      </div>
+      <div id="category">
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/appointment/new">New Appointment</a></li>
+            <li><a href="/client/new">New Client</a></li>
+            <li><a href="/client/directory">Client Directory</a></li>
+            <li><a href="/statistics">Statistics</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="body" style="background-color:white">
+      <div style="padding:5px 15px">
+        {% block page %}
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
